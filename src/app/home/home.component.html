@@ -1,0 +1,13 @@
+<div class="container-fluid m-5">
+  <div *ngIf="!registerMode" class="justify-content-center">
+    <button (click)="registerToggle()" class="btn btn-primary me-2">
+      Register
+    </button>
+    <button class="btn btn-primary me-2">Learn More</button>
+  </div>
+  <div *ngIf="registerMode" class="justify-content-center">
+    <p>Register form goes here</p>
+    <app-register [userFromHomeComponent]="users" (cancelEventEmitter)="cancelRegisterMode($event)"></app-register>
+  </div>
+  
+</div>
